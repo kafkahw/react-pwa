@@ -33,6 +33,7 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new HtmlWebpackPlugin({
+      filename: '200.html',
       template: './index.html'
     }),
     new ExtractTextPlugin('styles.[chunkhash:6].css'),
