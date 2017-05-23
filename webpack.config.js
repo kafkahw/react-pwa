@@ -8,6 +8,7 @@ module.exports = {
   entry: './index.js',
   output: {
     filename: 'bundle.js',
+    chunkFilename: '[name].chunk.js',
     publicPath: '/'
   },
   devtool: 'cheap-module-source-map',
@@ -19,7 +20,7 @@ module.exports = {
       {
         enforce: 'pre',
         test: /\.js$/,
-        loader: 'standard-loader',
+        loader: 'eslint-loader',
         exclude: /node_modules/
       }, {
         test: /\.js$/,

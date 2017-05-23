@@ -13,13 +13,14 @@ module.exports = {
   output: {
     path: resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash:6].js',
+    chunkFilename: '[name].chunk.[chunkhash:6].js',
     publicPath: '/'
   },
   module: {
     rules: [{
       enforce: 'pre',
       test: /\.js$/,
-      loader: 'standard-loader',
+      loader: 'eslint-loader',
       exclude: /node_modules/
     }, {
       test: /\.js$/,

@@ -17,10 +17,9 @@ class AsyncRoute extends Component {
 
   render () {
     if (this.state.loaded) {
-      return <this.component {...this.props.props} />
-    } else {
-      return <h2>Loading...</h2>
+      return <this.component {...this.props} />
     }
+    return <h2>Loading...</h2>
   }
 }
 
