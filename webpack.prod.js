@@ -37,7 +37,10 @@ module.exports = {
       filename: '200.html',
       template: './index.html'
     }),
-    new ExtractTextPlugin('styles.[chunkhash:6].css'),
+    new ExtractTextPlugin({
+      filename: 'styles.[chunkhash:6].css',
+      allChunks: true
+    }),
     new CleanWebpackPlugin(['dist']),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'
