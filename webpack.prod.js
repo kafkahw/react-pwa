@@ -43,7 +43,7 @@ module.exports = {
     }),
     new CleanWebpackPlugin(['dist']),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor'
+      names: ['vendor', 'manifest']  // Specify the common bundle's name
     })
   ],
   performance: {
