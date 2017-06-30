@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const webpack = require('webpack')
+const OfflinePlugin = require('offline-plugin')
 
 module.exports = {
   context: resolve(__dirname, 'src'),
@@ -44,7 +45,8 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest']  // Specify the common bundle's name
-    })
+    }),
+    new OfflinePlugin()
   ],
   performance: {
     hints: 'error'
