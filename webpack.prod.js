@@ -46,7 +46,13 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest']  // Specify the common bundle's name
     }),
-    new OfflinePlugin()
+    new OfflinePlugin({
+      publicPath: '/',
+      externals: ['/'],
+      ServiceWorker: {
+        navigateFallbackURL: '/'
+      }
+    })
   ],
   performance: {
     hints: 'error'
